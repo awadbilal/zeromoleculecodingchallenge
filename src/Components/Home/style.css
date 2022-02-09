@@ -1,0 +1,83 @@
+/* No movies page*/
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.empty button {
+  width: 18.75rem;
+  height: 3.375rem;
+  background: #2bd17e;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Create movie page */
+.create {
+  padding-top: 7.5rem;
+}
+.create .info {
+  padding-top: 7.5rem;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 991px) {
+  .create .info {
+    flex-direction: column-reverse;
+  }
+}
+.create .info .upload {
+  width: 29.5625rem;
+  height: 31.5rem;
+  background: #224957;
+  border: 2px dashed #ffffff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+.create .info .upload input {
+  width: inherit;
+  height: inherit;
+  /* display: none; */
+}
+.create .info .movie input,
+.create .info .movie input::after,
+.create .info .movie input::placeholder {
+  background: #224957;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+  height: 2.8125rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+.create .info .movie input[name="name"] {
+  width: 22.6875rem;
+}
+.create .info .movie input[name="publicationYear"] {
+  width: 13.5rem;
+}
+.create .info button {
+  width: 10rem;
+  height: 3.5rem;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}
+.create .info button[type="submit"] {
+  border: none;
+  background: #2bd17e;
+  margin-left: 3rem;
+}
