@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zeromoleculecodingchallenge/static/css/main.2ad29b7a.css",
+    "main.js": "/zeromoleculecodingchallenge/static/js/main.7c8b48f3.js",
+    "static/js/787.ef1ee1f4.chunk.js": "/zeromoleculecodingchallenge/static/js/787.ef1ee1f4.chunk.js",
+    "index.html": "/zeromoleculecodingchallenge/index.html",
+    "main.2ad29b7a.css.map": "/zeromoleculecodingchallenge/static/css/main.2ad29b7a.css.map",
+    "main.7c8b48f3.js.map": "/zeromoleculecodingchallenge/static/js/main.7c8b48f3.js.map",
+    "787.ef1ee1f4.chunk.js.map": "/zeromoleculecodingchallenge/static/js/787.ef1ee1f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ad29b7a.css",
+    "static/js/main.7c8b48f3.js"
+  ]
+}
