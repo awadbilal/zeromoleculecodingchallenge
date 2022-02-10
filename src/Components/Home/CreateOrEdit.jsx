@@ -8,15 +8,15 @@ import './style.css';
 function Create( { type, link } ) {
 
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [movieInfo, setMovieInfo] = useState({
     name: "",
     publicationYear: "",
   });
   const [poster, setPoster] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData, 
+    setMovieInfo({
+      ...movieInfo, 
       [e.target.name]: e.target.value
     });
   }
@@ -31,11 +31,12 @@ function Create( { type, link } ) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("data", formData);
-    data.append("files.poster", poster, "file");
+    const formData = new FormData();
+    formData.append("data", movieInfo);
+    formData.append("files.poster", poster, "file");
+    console.log(formData.data);
     if(link) {
-      axios.put("https://zm-movies-assignment.herokuapp.com/api/movies/9", data)
+      axios.put("https://zm-movies-assignment.herokuapp.com/api/movies/9", formData)
       .then ((res) => {
         console.log(res);
       })
@@ -44,7 +45,8 @@ function Create( { type, link } ) {
       });
     }
     else{
-      axios.post("https://zm-movies-assignment.herokuapp.com/api/movies", data)
+      console.log(formData);
+      axios("https://zm-movies-assignment.herokuapp.com/api/movies", formData)
       .then ((res) => {
         console.log(res);
       })
@@ -57,7 +59,7 @@ function Create( { type, link } ) {
   return (
     <Container className="create">
       <h1>Create a new movie</h1>
-      <Form onSumbit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Row className="info">
           <Col sm={12} md={5} lg={5}>
             <Dropzone onDrop={onDrop} accept={"image/*"} preview={poster} />
@@ -69,7 +71,7 @@ function Create( { type, link } ) {
                 name="name"
                 placeholder="Title"
                 onChange={handleChange}
-                value={formData.name}
+                value={movieInfo.name}
               />
             </Form.Group>
             <Form.Group className="mb-5">
@@ -80,7 +82,7 @@ function Create( { type, link } ) {
                 name="publicationYear"
                 placeholder="Publishing year"
                 onChange={handleChange}
-                value={formData.publicationYear}
+                value={movieInfo.publicationYear}
               />
             </Form.Group>
             <Form.Group className="mb-5 bt-5">

@@ -11,22 +11,25 @@ import './App.css';
 function App() {
 
   const [movies, setMovies] = useState();
-
   const navigate = useNavigate();
-  useEffect(() => {
-    if(sessionStorage.getItem("user")) navigate("/");
-    else navigate("/login");
-  }, []);
 
   useEffect(() => {
-    axios.get("https://zm-movies-assignment.herokuapp.com/api/movies?populate=*")
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log("error", err);
-    })
-  })
+    if(sessionStorage.getItem("token")) {
+      axios.get("https://zm-movies-assignment.herokuapp.com/api/movies?populate=*")
+      .then((res) => {
+        setMovies(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      navigate("/");
+    }
+    else navigate("/login");
+  }, [])
+
+  useEffect(() => {
+    if(sessionStorage.getItem("token")) axios.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.getItem('token');
+  }, [Window.reload])
 
   return (
     <Container className="App">

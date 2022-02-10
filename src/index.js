@@ -5,10 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from 'axios';
-
-axios.defaults.auth = localStorage.getItem('user');
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.getItem('token');
 
 ReactDOM.render(
   <React.StrictMode>

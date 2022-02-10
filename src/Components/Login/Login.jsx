@@ -40,9 +40,10 @@ function Login() {
       )
       .then((res) => {
         if(res.status === 200) {
-          console.log(res);
-          sessionStorage.setItem('user', res.data.user);
+          console.log(res.data.user);
+          sessionStorage.setItem('user', JSON.stringify(res.data.user));
           sessionStorage.setItem('token', res.data.jwt);
+          axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.jwt;
           navigate("/");
         };
       })

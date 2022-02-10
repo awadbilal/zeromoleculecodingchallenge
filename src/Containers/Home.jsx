@@ -1,10 +1,13 @@
 import React from 'react';
 import Empty from '../Components/Home/Empty';
+import Main from '../Components/Home/Main';
 
-function Home() {
+function Home({ movies }) {
   return (
     <div>
-      <Empty />
+      {
+        movies ? <Main movies={movies} /> : <Empty />
+      }
     </div>
   );
 }
