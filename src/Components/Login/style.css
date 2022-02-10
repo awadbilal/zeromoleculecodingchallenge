@@ -37,7 +37,7 @@
 .login form input[name="password"],
 .login form input[name="identifier"]::after,
 .login form input[name="password"]::after,
-.login form .form-control::placeholder  {
+.login form .form-control::placeholder {
   background: #224957;
   border-radius: 10px;
   border: none;
@@ -45,7 +45,7 @@
   width: 18.75rem;
   height: 2.8125rem;
   color: #ffffff;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.5rem;
 }
 .login form input[type="checkbox"] {
@@ -59,7 +59,7 @@
 .login form button[type="submit"] {
   width: 18.75rem;
   height: 3.375rem;
-  background: #2BD17E;
+  background: #2bd17e;
   border-radius: 10px;
   border: none;
 }

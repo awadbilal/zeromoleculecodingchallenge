@@ -7,11 +7,13 @@ const Dropzone = ({ onDrop, accept, preview }) => {
     accept,
   });
   return preview ? (
-    <img
-      src={URL.createObjectURL(preview)}
-      alt={preview.name}
-      style={{ maxWidth: "inherit", height: "inherit", maxHeight: "inherit" }}
-    />
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img
+        src={URL.createObjectURL(preview)}
+        alt={preview.name}
+        style={{ maxWidth: "inherit", height: "inherit", maxHeight: "inherit" }}
+      />
+    </div>
   ) : (
     <div {...getRootProps()} className="upload">
       <input className="dropzone-input" {...getInputProps()} />

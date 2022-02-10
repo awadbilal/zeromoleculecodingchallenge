@@ -81,3 +81,47 @@
   background: #2bd17e;
   margin-left: 3rem;
 }
+
+/* Main part */
+.main .add {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Movie Card part */
+.movie {
+  padding: 0 0.75rem;
+}
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 8px 16px;
+  background: #092c39 !important;
+  backdrop-filter: blur(200px);
+  border-radius: 12px !important;
+  border: none !important;
+}
+.movieCard img {
+  border-radius: 12px;
+  max-height: 25rem;
+  max-width: fit-content;
+  align-self: center;
+}
+.movieCard .card-body {
+  padding: 16px 8px 16px;
+}
+.movieCard .card-body .card-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+.movieCard .card-body .card-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}

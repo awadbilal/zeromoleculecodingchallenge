@@ -1,19 +1,18 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import './style.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import "./style.css";
 
-function Empty() {
-
+function Empty({ title, click, handler }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/create-movie");
-  }
+    navigate(handler);
+  };
 
   return (
     <Container className="empty">
-      <h1 className='pb-4'>Your movie list is empty</h1>
-      <button onClick={handleClick}>Add a new movie</button>
+      <h1 className="pb-4">{title}</h1>
+      <button onClick={handleClick}>{click}</button>
     </Container>
   );
 }

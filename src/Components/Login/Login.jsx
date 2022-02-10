@@ -5,7 +5,6 @@ import axios from "axios";
 import "./style.css";
 
 function Login() {
-
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,8 +19,8 @@ function Login() {
     }, 10000);
 
     return () => {
-      clearTimeout(timeId)
-    }
+      clearTimeout(timeId);
+    };
   }, [isVisible]);
 
   const handleChange = (e) => {
@@ -39,13 +38,14 @@ function Login() {
         formData
       )
       .then((res) => {
-        if(res.status === 200) {
+        if (res.status === 200) {
           console.log(res.data.user);
-          sessionStorage.setItem('user', JSON.stringify(res.data.user));
-          sessionStorage.setItem('token', res.data.jwt);
-          axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.jwt;
+          sessionStorage.setItem("user", JSON.stringify(res.data.user));
+          sessionStorage.setItem("token", res.data.jwt);
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + res.data.jwt;
           navigate("/");
-        };
+        }
       })
       .catch((err) => {
         setTimeout(() => {
@@ -58,9 +58,11 @@ function Login() {
   return (
     <Container className="login">
       <h1 className="pb-4">Sign in</h1>
-      {
-        isVisible ? <Alert variant="danger">Incorrect username or password</Alert> : ""
-      }
+      {isVisible ? (
+        <Alert variant="danger">Incorrect username or password</Alert>
+      ) : (
+        ""
+      )}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Control
