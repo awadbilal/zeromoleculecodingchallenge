@@ -6,7 +6,7 @@ import Dropzone from "./DropZone";
 import Empty from "./Empty";
 import "./style.css";
 
-function Create({ type, link, data = [] }) {
+function Create({ type, link, data = null }) {
   const navigate = useNavigate();
   const [movieInfo, setMovieInfo] = useState({
     name: data ? data.name : "",
@@ -34,7 +34,7 @@ function Create({ type, link, data = [] }) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("data", JSON.stringify(movieInfo));
-    formData.append("files.poster", poster, "file");
+    !data && formData.append("files.poster", poster, "file");
 
     if (link) {
       axios

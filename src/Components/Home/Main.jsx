@@ -23,17 +23,17 @@ function Main({ movies }) {
         <Col auto className="pl-2 text-start">
           <h1>
             My Movies
-            <button onClick={handleClick} className="add">
-              <IoIosAddCircleOutline size="2rem" />
+            <button className="add">
+              <IoIosAddCircleOutline onClick={handleClick} size="2rem" style={{cursor: 'pointer'}} />
             </button>
           </h1>
         </Col>
         <Col auto className="pr-2 text-end">
           <span style={{ cursor: "pointer" }}>
-            <b>
+            <b style={{ cursor: "pointer" }} onClick={handleLogout}>
               Logout
-              <button onClick={handleLogout} className="add">
-                <FiLogOut size="1.5rem" />
+              <button className="add">
+                <FiLogOut size="1.5rem" style={{ cursor: "pointer" }} />
               </button>
             </b>
           </span>
